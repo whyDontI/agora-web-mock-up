@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'myFront';
+  events: string[] = [];
+  opened: boolean;
+  color = 'primary';
+  mode = 'determinate';
 }

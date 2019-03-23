@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row justify-content-center align-items-center">
+      <mat-card class="col-8">
+          <mat-card-title>
+            Sign In
+          </mat-card-title>
+          <mat-card-subtitle>
+            Join The revolution
+          </mat-card-subtitle>
+          <mat-card-content>
+              <form class="example-form">
+                <mat-form-field class="example-full-width">
+                  <input matInput placeholder="Username/Email">
+                  <mat-icon matSuffix>person</mat-icon>
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Enter your password" [type]="passwordHide ? 'password' : 'text'">
+                    <mat-icon matSuffix (click)="passwordHide = !passwordHide">{{passwordHide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </mat-form-field>
+              </form>
+          </mat-card-content>
+      </mat-card>
+  </div>
+</div>
