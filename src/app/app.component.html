@@ -8,8 +8,9 @@
       </mat-card>
     <mat-action-list role="list">
       <button mat-list-item [routerLink]="['/home']">Home</button>
-      <button mat-list-item >Dashboard</button>
-      <button mat-list-item >Profile</button>
+      <button mat-list-item [routerLink]="['/dashboard']">Dashboard</button>
+      <button mat-list-item [routerLink]="['/dashboard/election']">Election</button>
+      <button mat-list-item [routerLink]="['/profile']">Profile</button>
       <button mat-list-item >About</button>
       <button mat-list-item >Help</button>
     </mat-action-list>
@@ -26,8 +27,9 @@
             <mat-icon>person</mat-icon>
           </button>
           <mat-menu #menu="matMenu">
-            <button mat-menu-item [routerLink]="['/user/signin']" ><mat-icon>vpn_key</mat-icon><span>SignIn</span></button>
-            <button mat-menu-item [routerLink]="['/user/signup']" ><mat-icon>person_add</mat-icon><span>SignUp</span></button>
+            <button mat-menu-item [routerLink]="['/user/signin']" ><mat-icon>vpn_key</mat-icon><span>Sign In</span></button>
+            <button mat-menu-item [routerLink]="['/user/signup']" ><mat-icon>person_add</mat-icon><span>Sign Up</span></button>
+            <button mat-menu-item [routerLink]="['/home']" ><mat-icon>power_settings_new</mat-icon><span>Sign Out</span></button>
           </mat-menu>
         </mat-toolbar-row>
     </mat-toolbar>

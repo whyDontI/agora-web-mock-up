@@ -8,7 +8,10 @@ import { MaterialModule } from './material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SignInComponent } from './user/sign-in/sign-in.component';
 import { SignUpComponent } from './user/sign-up/sign-up.component';
-import { HomeComponent } from './user/home/home.component';
+import { ProfileComponent } from './profile/profile.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { ElectionComponent } from './dashboard/election/election.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +19,9 @@ import { HomeComponent } from './user/home/home.component';
     SignInComponent,
     SignUpComponent,
     HomeComponent,
+    ProfileComponent,
+    DashboardComponent,
+    ElectionComponent,
   ],
   imports: [
     BrowserModule,

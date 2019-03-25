@@ -1,0 +1,42 @@
+<div class="row justify-content-center align-items-center">
+  <mat-card class="col-8">
+    <mat-card-title>Update Profile</mat-card-title>
+    <form [formGroup]="updateProfileForm" (ngSubmit)="updateProfile(updateProfileForm.value)">
+      <div class="row justify-content-center align-items-center">
+        <mat-form-field class="col-6">
+            <input matInput placeholder="UserName" formControlName="userName" required>
+        </mat-form-field>
+        <mat-form-field class="col-6">
+          <input matInput placeholder="Email" formControlName="email" required>
+        </mat-form-field>
+      
+        <mat-form-field class="col-6">
+          <input matInput placeholder="FirstName" formControlName="firstName" >
+        </mat-form-field>
+        <mat-form-field class="col-6">
+          <input matInput placeholder="LastName" formControlName="lastName" >
+        </mat-form-field>
+        <button mat-raised-button type="submit" [disabled]="!updateProfileForm.valid" color="primary">Submit</button>
+      </div>
+    </form>
+  </mat-card>
+</div>
+
+<div class="row justify-content-center align-items-center">
+  <mat-card class="col-8">
+      <mat-card-title>Change password</mat-card-title>
+      <form [formGroup]="changePasswordForm" (ngSubmit)="changePassword(changePasswordForm.value)">
+        <div class="row justify-content-center align-items-center">
+          <mat-form-field class="col-6">
+              <input matInput formControlName="oldPassword" placeholder="Enter your old password" [type]="passwordHide1 ? 'password' : 'text'">
+              <mat-icon matSuffix (click)="passwordHide1 = !passwordHide1">{{passwordHide1 ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </mat-form-field>
+          <mat-form-field class="col-6">
+              <input matInput formControlName="newPassword" placeholder="Enter your new password" [type]="passwordHide2 ? 'password' : 'text'">
+              <mat-icon matSuffix (click)="passwordHide2 = !passwordHide2">{{passwordHide2 ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </mat-form-field>
+          <button mat-raised-button type="submit" [disabled]="!changePasswordForm.valid" color="primary">Submit</button>
+        </div>
+      </form>
+    </mat-card>
+</div>

@@ -8,30 +8,25 @@
               Join The revolution
             </mat-card-subtitle>
             <mat-card-content>
-                <form class="example-form">
+                <form class="example-form" [formGroup]="signUpForm">
                   <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Username">
+                    <input matInput placeholder="Username" formControlName="userName">
                     <mat-icon matSuffix>person</mat-icon>
                   </mat-form-field>
                   <mat-form-field class="example-full-width">
-                      <input matInput placeholder="Email" [formControl]="emailFormControl">
-                      <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-                        Please enter a valid email address
-                      </mat-error>
-                      <mat-error *ngIf="emailFormControl.hasError('required')">
-                        Email is <strong>required</strong>
-                      </mat-error>
+                      <input matInput placeholder="Email" formControlName="email">
                       <mat-icon matSuffix>email</mat-icon>
                     </mat-form-field>
                   <mat-form-field class="example-full-width">
                     <span matPrefix>+91 &nbsp;</span>
-                    <input type="tel" matInput placeholder="Phone">
+                    <input type="tel" formControlName="phone" matInput placeholder="Phone">
                     <mat-icon matSuffix>mode_edit</mat-icon>
                   </mat-form-field>
                   <mat-form-field class="example-full-width">
-                      <input matInput placeholder="Enter your password" [type]="passwordHide ? 'password' : 'text'">
+                      <input matInput formControlName="password" placeholder="Enter your password" [type]="passwordHide ? 'password' : 'text'">
                       <mat-icon matSuffix (click)="passwordHide = !passwordHide">{{passwordHide ? 'visibility_off' : 'visibility'}}</mat-icon>
                   </mat-form-field>
+                  <button mat-raised-button type="submit" [disabled]="!signUpForm.valid" color="primary">Submit</button>
                 </form>
             </mat-card-content>
         </mat-card>

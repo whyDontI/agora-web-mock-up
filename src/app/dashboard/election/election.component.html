@@ -1,0 +1,160 @@
+<div class="row justify-content-center align-items-center">
+  <mat-horizontal-stepper class="col-8" [linear]="isLinear" #stepper>
+      <!-- FirstForm start -->      
+      <mat-step [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup">
+          <ng-template matStepLabel>Basic</ng-template>
+          <div class="row justify-content-center align-items-center">
+            
+            <mat-form-field class="col-6">
+              <input matInput placeholder="Election Name" formControlName="electionName" required>
+            </mat-form-field>
+            
+            <mat-form-field class="col-6">
+              <input matInput placeholder="Description" formControlName="electionDescription" required>
+            </mat-form-field>
+            
+          </div>
+          
+          <div>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+      <!-- FirstForm end -->
+
+      <!-- SecondForm Start -->
+      <mat-step [stepControl]="secondFormGroup">
+        <form [formGroup]="secondFormGroup">
+          <ng-template matStepLabel>Select Dates</ng-template>
+          <div class="row justify-content-center align-items-center">
+            
+            <mat-form-field class="col-6">
+              <input matInput formControlName="startDate" [matDatepicker]="picker1" placeholder="Choose start date">
+              <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+              <mat-datepicker #picker1></mat-datepicker>
+            </mat-form-field>
+  
+            <mat-form-field class="col-6">
+              <input matInput formControlName="endDate" [matDatepicker]="picker2" placeholder="Choose end date">
+              <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+              <mat-datepicker #picker2></mat-datepicker>
+            </mat-form-field>
+
+        </div>
+          
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+
+      <mat-step [stepControl]="thirdFormGroup">
+        <form [formGroup]="thirdFormGroup">
+          <ng-template matStepLabel>Add Candidates</ng-template>
+          <div class="row">
+            <mat-card class="col-6 row">
+                <mat-form-field class="col-12">
+                  <input matInput placeholder="Candidate" [(ngModel)]="candidate" formControlName="candidate" required>
+                </mat-form-field>
+                <button mat-fab color="accent" *ngIf="candidate" (click)="addCandidate(candidate)"><mat-icon>plus_one</mat-icon></button>
+            </mat-card>
+            
+            <mat-card class="col-6">
+              <mat-card-title>Candidates</mat-card-title>
+              <mat-card-content>
+                <mat-list role="list">
+                  <mat-list-item role="listitem" *ngFor="let c of candidates; index as i">
+                    <h3>{{c}}</h3><button style="position:absolute; right: 1em;" mat-mini-fab color="warn" (click)="deleteCandidate(i)"><mat-icon>delete</mat-icon></button>
+                  </mat-list-item>
+                </mat-list>
+              </mat-card-content>
+            </mat-card>
+          </div>
+          
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+
+      <mat-step [stepControl]="fourthFormGroup">
+        <form [formGroup]="fourthFormGroup">
+          <ng-template matStepLabel>Select voting algorithm</ng-template>
+          <mat-radio-group class="example-radio-group">
+            <mat-radio-button value="1" class=
+            "example-radio-button">Oklahoma</mat-radio-button>
+            <mat-radio-button value="2" class=
+            "example-radio-button">Range Voting</mat-radio-button>
+            <mat-radio-button value="3" class=
+            "example-radio-button">Ranked Pairs</mat-radio-button>
+          </mat-radio-group>
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+
+      <mat-step [stepControl]="fifthFormGroup">
+        <form [formGroup]="fifthFormGroup" class="row">
+          <ng-template matStepLabel>Wrap Up</ng-template>
+          <div class="col-6">
+            <mat-checkbox>Get real time results?</mat-checkbox>
+          </div>
+          <div class="col-6">
+            <mat-checkbox>Invite voters?</mat-checkbox>
+          </div>
+
+          <div class="col-12">
+            <label id="example-radio-group-label">How secrete are the ballots?</label>
+            <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group">
+              <mat-radio-button value="1" class=
+              "example-radio-button">Ballots are completely secrete and never shown to anyone </mat-radio-button>
+              <mat-radio-button value="2" class=
+              "example-radio-button">Ballots are visible only to me </mat-radio-button>
+              <mat-radio-button value="3" class=
+              "example-radio-button">Ballots are visible to everyone with access to the election </mat-radio-button>
+            </mat-radio-group>
+          </div>
+
+          <div class="col-12">
+            <label id="example-radio-group-label">Who can see the list of voters?</label>
+            <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group">
+              <mat-radio-button value="1" class=
+              "example-radio-button">Only me</mat-radio-button>
+              <mat-radio-button value="2" class=
+              "example-radio-button">Everyone with the access to the election</mat-radio-button>
+            </mat-radio-group>
+          </div>          
+
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button >Submit</button>
+          </div>
+        </form>
+      </mat-step>
+    </mat-horizontal-stepper>
+</div>
+
+
+<!-- 
+  // Basic
+    name
+    description
+
+  // Select Dates
+  start date
+  end date
+
+  // Add Candidates
+  candidates
+
+  // Select Algorithm
+  Select Algorithm
+
+  //Wrap Up
+  Other required info 
+-->

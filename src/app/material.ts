@@ -10,7 +10,14 @@ import {
     MatCardModule,
     MatProgressSpinnerModule,
     MatInputModule,
-    MatMenuModule
+    MatMenuModule,
+    MatChipsModule,
+    MatTabsModule,
+    MatExpansionModule,
+    MatStepperModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatRadioModule
 } from '@angular/material';
 
 @NgModule({
@@ -25,7 +32,14 @@ import {
         MatCardModule,
         MatProgressSpinnerModule,
         MatInputModule,
-        MatMenuModule
+        MatMenuModule,
+        MatChipsModule,
+        MatTabsModule,
+        MatExpansionModule,
+        MatStepperModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
+        MatRadioModule
     ],
     exports: [
         MatButtonModule,
@@ -38,7 +52,14 @@ import {
         MatCardModule,
         MatProgressSpinnerModule,
         MatInputModule,
-        MatMenuModule
+        MatMenuModule,
+        MatChipsModule,
+        MatTabsModule,
+        MatExpansionModule,
+        MatStepperModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
+        MatRadioModule
     ]
 })
 
