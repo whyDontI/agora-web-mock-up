@@ -15,6 +15,7 @@ export class ElectionComponent implements OnInit {
   fifthFormGroup: FormGroup;
   startDate = new FormControl((new Date()).toISOString());
   endDate = new FormControl((new Date()).toISOString());
+  candidate: string;
   candidates: any[] = [];
 
   constructor(private _formBuilder: FormBuilder) { }

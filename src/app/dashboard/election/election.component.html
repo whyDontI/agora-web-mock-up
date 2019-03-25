@@ -56,7 +56,7 @@
           <div class="row">
             <mat-card class="col-6 row">
                 <mat-form-field class="col-12">
-                  <input matInput placeholder="Candidate" [(ngModel)]="candidate" formControlName="candidate" required>
+                  <input matInput placeholder="Candidate" formControlName="candidate" required>
                 </mat-form-field>
                 <button mat-fab color="accent" *ngIf="candidate" (click)="addCandidate(candidate)"><mat-icon>plus_one</mat-icon></button>
             </mat-card>
